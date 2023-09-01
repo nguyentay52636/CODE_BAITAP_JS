@@ -13,21 +13,26 @@
 //     document.getElementById(id).style.fontSize = '30px' ;
 
 document.getElementById("btntinhdiem").onclick = function () {
+  //input
   var diemchuan = parseFloat(document.getElementById("diemchuan").value);
   var diem1 = Number(document.getElementById("diem1").value);
   var diem2 = Number(document.getElementById("diem2").value);
   var diem3 = Number(document.getElementById("diem3").value);
   var khuvuc = Number(document.getElementById("khuvuc").value);
   var doituong = Number(document.getElementById("doituong").value);
+  //xuli
   var diemtong = parseFloat(diem1 + diem2 + diem3 + khuvuc + doituong);
   if (diemtong < diemchuan) {
+        //output 
     document.getElementById("choraketqua").innerHTML =
       "bạn đã rớt do thiếu điểm" + "điểm của bạn là : " + diemtong;
   } else {
+        //output
     document.getElementById("choraketqua").innerHTML =
       "bạn đã đậu. tổng diểm" + diemtong;
   }
   if (diem1 == 0 || diem2 == 0 || diem3 == 0) {
+    //output
     document.getElementById("choraketqua").innerHTML =
       "bạn đã rớt do có điểm nhỏ hơn không ";
   }
@@ -39,8 +44,10 @@ document.getElementById("btntinhdiem").onclick = function () {
 // xử lí  : if( sokwn < 50) then tien = sokwh*500 ;
 
 document.getElementById("btntinhtiendien").onclick = function () {
+  //input
   var hoten = document.getElementById("hoten").value;
   var sokwh = Number(document.getElementById("sokwh").value);
+  //xuli
   var tien = 0;
   if (sokwh < 50) {
     //  var dem1 = (sokwh - 50)*500 ;
@@ -64,6 +71,7 @@ document.getElementById("btntinhtiendien").onclick = function () {
   if (sokwh >= 350) {
     var dem5 = (sokwh - 50) * 1300;
     tien = parseFloat(50 * 500) + dem5;
+    //output
     document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
   }
 };
@@ -80,11 +88,13 @@ document.getElementById("btntinhtiendien").onclick = function () {
 // ouput : t = ?
 
 function thuethunhap() {
+  //input
   var e = document.getElementById("hoten1").value;
   var n =
     Number(document.getElementById("thunhapnam").value) -
     4e6 -
     16e5 * Number(document.getElementById("songuoiphuthuoc").value);
+  //xuli
   var t = 0;
 
   if (n > 0 && n <= 6e7) {
@@ -107,12 +117,13 @@ function thuethunhap() {
   }
 
   var formattedTien = new Intl.NumberFormat("vn-VN").format(t);
-
+//output
   document.getElementById("tienthuela").innerHTML =
     "Họ tên: " + e + "; Tiền thuế thu nhập cá nhân: " + formattedTien + " VND";
 }
 
 //bai 4;
+// xử lí ẩn hiện soketnoi 
 function luachon() {
   const chonkhachang = document.getElementById("chonkhachhang").value;
   const soketnoi = document.getElementById("soketnoi");
@@ -128,26 +139,21 @@ function luachon() {
 }
 
 function Tinhtien() {
+  //input 
   const chonkhachhang = document.getElementById("chonkhachhang").value;
   const soketnoi = parseInt(document.getElementById("soketnoi").value);
   const makhachhang = document.getElementById("makhachhang").value;
   const sokenhcaocap = parseInt(document.getElementById("sokenhcaocap").value);
+  //xuli : 
   let tinhtien = 0;
   if (chonkhachhang == "nhadan") {
     tinhtien = 4.5 + 20.5 + sokenhcaocap * 7.5;
   } else if (chonkhachhang == "doanhnghiep") {
-    // if(soketnoi >10) {
-    // totalbill = (15+75+(soketnoi-10)*5) +sokenhcaocap*50 ;
-    // } else {
-    //     return 0;
-
-    // }
+  
     tinhtien =
       15 + 75 + (soketnoi > 10 ? (soketnoi - 10) * 5 : 0) + sokenhcaocap * 50;
   }
-  document.getElementById(
-    "tinhtiencap"
-  ).innerHTML = `Hóa đơn cho khách hàng mã ${makhachhang}: ${tinhtien}$`;
-  //  document.querySelector(".alert").style.display = 'block' ;
-  // }
+  //output
+  document.getElementById("tinhtiencap").innerHTML = `Hóa đơn cho khách hàng mã ${makhachhang}: ${tinhtien}$`;
+ 
 }
