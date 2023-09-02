@@ -52,19 +52,19 @@ document.getElementById("btntinhtiendien").onclick = function () {
   if (sokwh < 50) {
     //  var dem1 = (sokwh - 50)*500 ;
     tien = parseFloat(sokwh * 500);
-    document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
+    document.getElementById("tiendienla").innerHTML = hoten + ","+"Tiền điện :" + tien;
   } else if (sokwh >= 50 && sokwh <= 100) {
     var dem2 = (sokwh - 50) * 650;
     tien = parseFloat(50 * 500) + dem2;
-    document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
+    document.getElementById("tiendienla").innerHTML = hoten + ","+"Tiền điện :" + tien;
   } else if (sokwh > 100 && sokwh <= 200) {
     var dem3 = (sokwh - 50) * 850;
     tien = parseFloat(50 * 500) + dem3;
-    document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
+    document.getElementById("tiendienla").innerHTML = hoten + ","+"Tiền điện :" + tien;
   } else if (sokwh > 200 && sokwh <= 350) {
     var dem4 = (sokwh - 50) * 1100;
     tien = parseFloat(50 * 500) + dem4;
-    document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
+    document.getElementById("tiendienla").innerHTML = hoten + ","+"Tiền điện :" + tien;
   } else {
     document.getElementById("tiendienla").innerHTML = "Nhap lai ! ";
   }
@@ -72,7 +72,7 @@ document.getElementById("btntinhtiendien").onclick = function () {
     var dem5 = (sokwh - 50) * 1300;
     tien = parseFloat(50 * 500) + dem5;
     //output
-    document.getElementById("tiendienla").innerHTML = hoten + "," + tien;
+    document.getElementById("tiendienla").innerHTML = hoten + ","+"Tiền điện :" + tien;
   }
 };
 
